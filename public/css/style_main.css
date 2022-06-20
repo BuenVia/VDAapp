@@ -1,0 +1,59 @@
+:root {
+    --card-clr: rgba(214, 31, 31, 0.5);
+    --text-clr-pri: rgb(240, 240, 240);
+    --text-clr-sec: rgb(255, 255, 0);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Play', sans-serif;
+    box-sizing: border-box;
+}
+
+    body {
+        height: 100%;
+        width: 100%;
+        background-image: url(/assets/background4.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center right;
+        background-attachment: fixed;
+        background-color: var(--bkg-clr-main);
+    }
+
+    .nav-logo {
+        align-items: 0 auto;
+        width: 150px;
+    }
+
+    .card-body {
+        background-color: var(--card-clr);
+    }
+
+    .profile {
+        margin: 2rem 0;
+        padding: .25rem;
+        color: var(--text-clr-sec);
+        word-wrap: break-word;
+    }
+
+    .profile h4 {
+        font-size: 10px;
+    }
+    @media screen and (min-width: 500px) {
+        .profile h4{
+            font-size: 18px;
+        }
+    }
+
+    .intro {
+        padding: .5rem;
+        background-color: var(--card-clr);
+        color: var(--text-clr-sec);
+        word-wrap: break-word;
+    }
+
+    .intro h1, p {
+        color: var(--text-clr-pri);
+    }
