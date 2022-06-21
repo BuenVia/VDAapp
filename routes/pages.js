@@ -33,6 +33,18 @@ router.get('/resources', (req, res) => {
     res.render('resources')
 })
 
+router.get('/partners', (req, res) => {
+    res.render('partners')
+})
+
+router.get('/testimonials', (req, res) => {
+    res.render('testimonials')
+})
+
+router.get('/contact', (req, res) => {
+    res.render('contact')
+})
+
 router.get('/admin', (req, res) => {
     res.render('admin')
 })
