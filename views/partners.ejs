@@ -5,8 +5,14 @@
 
         
 
-            <%= partnerCompany %> 
-
+ <% partners.forEach(p => { %>
+    <div style="border: 1px solid red">
+        <div><%=p.partnerCompany %></div>
+        <div><%=p.partnerEmail %></div>
+        <div><%=p.partnerPhone %></div>
+        <div><%=p.partnerWebsite %></div>
+    </div>
+ <% }) %>
         
     </div>
 

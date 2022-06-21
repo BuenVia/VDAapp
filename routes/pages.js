@@ -37,8 +37,7 @@ router.get('/resources', (req, res) => {
 // Show partners
 router.get('/partners', async (req, res) => {
     const partners = await Partner.find()
-    
-    res.render('partners', { partnerCompany: partners[1].partnerCompany })
+    res.render('partners',  { partners: partners })
 })
 
 // Create a new partner
