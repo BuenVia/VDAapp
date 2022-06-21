@@ -1,8 +1,22 @@
 <h1>Admin</h1>
 
-<form action="/webinar" method="POST">
-    <input type="text" name="webinarName" placeholder="Webinar Name" required>
-    <input type="date" name="webinarDate" placeholder="Webinar Date" required>
-    <input type="time" name="webinarTime" placeholder="Webinar Time" required>
-    <button type="submit">Submit</button>
-</form>
+<div>
+    <h1>Add Webinar</h1>
+    <form action="/webinar" method="POST">
+        <input type="text" name="webinarName" placeholder="Webinar Name" required>
+        <input type="date" name="webinarDate" placeholder="Webinar Date" required>
+        <input type="time" name="webinarTime" placeholder="Webinar Time" required>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<div>
+    <h1>Add Partner</h1>
+    <form action="/partners" method="POST">
+        <input type="text" name="partnerCompany" placeholder="Partner Company" required>
+        <input type="text" name="partnerEmail" placeholder="Partner Email" required>
+        <input type="text" name="partnerPhone" placeholder="Partner Phone" required>
+        <input type="text" name="partnerWebsite" placeholder="Partner Website" required>
+        <button type="submit">Submit</button>
+    </form>
+</div>

@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Webinar = require('../models/webinar')
+const Partner = require('../models/partner')
 const mongoose = require('mongoose')
 
 router.get('/', (req, res) => {
@@ -33,8 +34,27 @@ router.get('/resources', (req, res) => {
     res.render('resources')
 })
 
-router.get('/partners', (req, res) => {
-    res.render('partners')
+// Show partners
+router.get('/partners', async (req, res) => {
+    const partners = await Partner.find()
+    
+    res.render('partners', { partnerCompany: partners[1].partnerCompany })
+})
+
+// Create a new partner
+router.post('/partners', async (req, res) => {
+    const partner = new Partner({
+        partnerCompany: req.body.partnerCompany,
+        partnerEmail: req.body.partnerEmail,
+        partnerPhone: req.body.partnerPhone,
+        partnerWebsite: req.body.partnerWebsite
+    })
+    try {
+        await partner.save()
+        res.redirect('/partners')
+    } catch (err) {
+        res.send('error with loading partner')
+    }
 })
 
 router.get('/testimonials', (req, res) => {
