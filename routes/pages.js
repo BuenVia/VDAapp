@@ -1,12 +1,32 @@
 const express = require('express')
 const router = express.Router()
+const Webinar = require('../models/webinar')
+const mongoose = require('mongoose')
 
 router.get('/', (req, res) => {
     res.render('index')
 })
 
-router.get('/webinar', (req, res) => {
-    res.render('webinar', { webinarName: 'The Logic of Failure', webinarDate: '01/01/2022', webinarTime: '00:00' })
+// Display current webinar
+router.get('/webinar', async (req, res) => {
+    const webinar = await Webinar.find()
+    const currentWebinar = webinar[webinar.length - 1];
+    res.render('webinar', currentWebinar)
+})
+
+// Create a new webinar
+router.post('/webinar', async (req, res) => {
+    const webinar = new Webinar({
+        webinarName: req.body.webinarName, 
+        webinarDate: req.body.webinarDate, 
+        webinarTime: req.body.webinarTime
+    })
+    try {
+        await webinar.save()
+        res.redirect('/webinar')
+    } catch (err) {
+        res.status(400).send({ message: err.message })
+    }
 })
 
 router.get('/resources', (req, res) => {

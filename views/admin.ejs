@@ -1,8 +1,8 @@
 <h1>Admin</h1>
 
-<form action="/pages" method="POST">
-    <input type="text" name="webinarName" placeholder="Webinar Name">
-    <input type="text" name="webinarDate" placeholder="Webinar Date">
-    <input type="text" name="webinarTime" placeholder="Webinar Time">
+<form action="/webinar" method="POST">
+    <input type="text" name="webinarName" placeholder="Webinar Name" required>
+    <input type="date" name="webinarDate" placeholder="Webinar Date" required>
+    <input type="time" name="webinarTime" placeholder="Webinar Time" required>
     <button type="submit">Submit</button>
 </form>
