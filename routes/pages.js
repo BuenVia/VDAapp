@@ -60,6 +60,10 @@ router.get('/testimonials', (req, res) => {
     res.render('testimonials')
 })
 
+router.get('/vda', (req, res) => {
+    res.render('vda')
+})
+
 router.get('/contact', (req, res) => {
     res.render('contact')
 })

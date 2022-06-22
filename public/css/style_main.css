@@ -49,10 +49,14 @@
         text-align: center;
     }
     
-    .intro h1, p {
+    .intro h1, h3, p {
         color: var(--text-clr-pri);
     }
     
+    .title {
+        color: var(--text-clr-sec);
+    }
+
     .profile {
         margin-top: 30rem;
         text-align: center;
