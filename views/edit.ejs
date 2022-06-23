@@ -1,0 +1,12 @@
+<form action="/partners/update" method="POST">
+    <p>ID: <%= partner._id %></p>
+    <label>Company: </label>
+    <input type="text" value="<%= partner.partnerCompany %>">
+    <label>Email: </label>
+    <input type="text" value="<%= partner.partnerEmail %>">
+    <label>Phone: </label>
+    <input type="text" value="<%= partner.partnerPhone %>">
+    <label>Website: </label>
+    <input type="text" value="<%= partner.partnerWebsite %>">
+    <button type="submit">Submit</button>
+</form>

@@ -1,5 +1,5 @@
 :root {
-    --card-clr: rgba(0, 0, 0, 0.5);
+    --card-clr: rgba(0, 0, 0, 0.8);
     --text-clr-pri: rgb(240, 240, 240);
     --text-clr-sec: rgb(255, 255, 0);
 }
@@ -23,9 +23,12 @@
     .container {
         background-color: var(--card-clr);
         max-width: 1200px;
-        height: 100%;
+        min-height: 100%;
     }
 
+    .height100 {
+       min-height: 100%;
+   }
     .flex-col {
         display: flex;
         flex-direction: column;
@@ -50,10 +53,6 @@
         word-wrap: break-word;
     }
 
-     .height100 {
-        height: 100%;
-        overflow: hidden;
-    }
    
     .intro {
         display: flex;
@@ -84,19 +83,31 @@
             font-size: 18px;
         }
     }
+
+.info-container {
+}
+.info-box {
+    margin-top: 5rem;
+}
 /*BUTTONS*/
-    .fa {
-        padding: .5rem;
-        font-size: 12px;
-        text-align: center;
-        text-decoration: none;
-        margin: 5px 2px;
-        border: 1px solid var(--text-clr-sec);
-        border-radius: 5px;
-        background: transparent;
-        color: var(--text-clr-sec);
-      }
-      
-      .fa:hover {
-          opacity: 0.7;
-      }
+.fa {
+    padding: .5rem;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border: 1px solid var(--text-clr-sec);
+    border-radius: 5px;
+    background: transparent;
+    color: var(--text-clr-sec);
+}
+    
+.fa:hover {
+    opacity: 0.7;
+}
+
+.info-btn {
+    height: 2rem;
+    width: 5rem;
+    border: 1px solid var(--text-clr-sec);
+}

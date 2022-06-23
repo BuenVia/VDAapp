@@ -18,5 +18,17 @@
         <input type="text" name="partnerPhone" placeholder="Partner Phone" required>
         <input type="text" name="partnerWebsite" placeholder="Partner Website" required>
         <button type="submit">Submit</button>
+    </form> 
+</div>
+
+<div>
+    <h1>Edit Partner</h1>
+    <form action="/edit" method="post">
+        <select name="partnerEdit">
+            <% partners.forEach(p => { %>
+                <option value="<%= p._id %>"><%= p.partnerCompany %></option>
+            <% }); %>
+        </select>
+        <button type="submit">Edit</button>
     </form>
 </div>
