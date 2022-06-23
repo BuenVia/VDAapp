@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Webinar = require('../models/webinar')
 const Partner = require('../models/partner')
+const Info = require('../models/information')
 const mongoose = require('mongoose')
 
 router.get('/', (req, res) => {
@@ -62,6 +63,22 @@ router.get('/testimonials', (req, res) => {
 
 router.get('/vda', (req, res) => {
     res.render('vda')
+})
+
+
+// Create a new webinar
+router.post('/vda', async (req, res) => {
+    const info = new Info({
+        clientName: req.body.clientName, 
+        clientCompany: req.body.clientCompany, 
+        clientEmail: req.body.clientEmail
+    })
+    try {
+        await info.save()
+        res.redirect('/vda?sent=success')
+    } catch (err) {
+        res.status(400).send({ message: err.message })
+    }
 })
 
 router.get('/contact', (req, res) => {
