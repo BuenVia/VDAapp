@@ -3,7 +3,7 @@ const router = express.Router()
 const Webinar = require('../models/webinar')
 const Partner = require('../models/partner')
 const Info = require('../models/information')
-const mongoose = require('mongoose')
+
 
 router.get('/', (req, res) => {
     res.render('index')
@@ -83,17 +83,6 @@ router.post('/vda', async (req, res) => {
 
 router.get('/contact', (req, res) => {
     res.render('contact')
-})
-
-router.get('/admin', async (req, res) => {
-    const partners = await Partner.find()
-    res.render('admin', { partners: partners })
-})
-
-router.post('/edit', async (req, res) => {
-    const partnerId = req.body.partnerEdit
-    const partner = await Partner.findById(partnerId)
-    res.render('edit', { partner: partner })
 })
 
 module.exports = router

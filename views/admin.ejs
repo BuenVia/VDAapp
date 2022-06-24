@@ -23,7 +23,7 @@
 
 <div>
     <h1>Edit Partner</h1>
-    <form action="/edit" method="post">
+    <form action="/admin/edit" method="POST">
         <select name="partnerEdit">
             <% partners.forEach(p => { %>
                 <option value="<%= p._id %>"><%= p.partnerCompany %></option>
@@ -32,3 +32,5 @@
         <button type="submit">Edit</button>
     </form>
 </div>
+
+<a href="/admin/abc">uigughjjhg</a>

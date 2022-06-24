@@ -21,6 +21,9 @@ app.use(express.json())
 const pagesRouter = require('./routes/pages')
 app.use("/", pagesRouter)
 
+const adminRouter = require('./routes/admin')
+app.use("/admin", adminRouter)
+
 
 app.listen(9000, (req, res) => {
     console.log('App is listening on port 9000');
