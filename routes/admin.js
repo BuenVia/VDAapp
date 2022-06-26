@@ -13,5 +13,22 @@ router.post('/edit', async (req, res) => {
     res.render('edit', { partner: partner })
 })
 
+router.post('/edit/update', async (req, res) => {
+    // await Partner.updateOne({ _id: req.body._id }, { partnerCompany: 'a' })
+    // res.render('index')
+    const partnerUpdate = {
+        partnerCompany: req.body.partnerCompany,
+        partnerEmail: req.body.partnerEmail,
+        partnerPhone: req.body.partnerPhone,
+        partnerWebsite: req.body.partnerWebsite
+    }
+    try {
+        await Partner.updateOne({ _id: req.body._id }, partnerUpdate)
+        res.render('index')
+    } catch (e) {
+        console.log(e);
+    }
+})
+
 
 module.exports = router
