@@ -28,6 +28,10 @@
 
     .height100 {
        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
    }
     .flex-col {
         display: flex;
